@@ -12,5 +12,7 @@ Der Dialog soll zweiteilig sein:
     - Woche
     - Monat
     - Jahr
-   
+
+z.B. könnte es so aussehen: https://www.bbx.de/strom/stromkostenrechner/
+
 Branch: Das ist der master!
