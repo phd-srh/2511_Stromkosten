@@ -12,7 +12,6 @@ public class InputView extends JFrame {
     private final JTextField operatingHoursInput;
     private final JTextField operatingDaysInput;
     private final JTextField kWhPriceInput;
-    private final JButton exitButton;
 
     public InputView()  {
         setTitle("Stromrechner");
@@ -28,14 +27,14 @@ public class InputView extends JFrame {
 
         JLabel wattageLabel = new JLabel("Verbrauch (W)");
         wattageInput = new JTextField();
-        JLabel operatingHoursLabel = new JLabel("Betriebsdauer (Stunden");
+        JLabel operatingHoursLabel = new JLabel("Betriebsdauer (Stunden)");
         operatingHoursInput = new JTextField();
-        JLabel operatingDaysLabel = new JLabel("Betriebszeit/Woche");
+        JLabel operatingDaysLabel = new JLabel("Betriebstage/Woche");
         operatingDaysInput = new JTextField();
-        JLabel kWhPriceLabel = new JLabel();
+        JLabel kWhPriceLabel = new JLabel("Strompreis (€/kWh)");
         kWhPriceInput = new JTextField();
         submitButton = new JButton("Berechnen");
-        exitButton = new JButton("Beenden");
+        JButton exitButton = new JButton("Beenden");
 
         content.add(wattageLabel);
         content.add(wattageInput);
@@ -52,9 +51,7 @@ public class InputView extends JFrame {
         setVisible(true);
         pack();
 
-        exitButton.addActionListener(e -> {
-            dispose();
-        });
+        exitButton.addActionListener(e -> dispose());
 
     }
 
@@ -74,7 +71,7 @@ public class InputView extends JFrame {
         return Integer.parseInt(operatingDaysInput.getText());
     }
 
-    public double getKWhPrice() {
+    public double getkWhPrice() {
         return Double.parseDouble(kWhPriceInput.getText());
     }
 
@@ -83,4 +80,6 @@ public class InputView extends JFrame {
     public static void main(String[] args) {
         new InputView();
     }
+
+
 }

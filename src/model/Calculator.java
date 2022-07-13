@@ -1,13 +1,13 @@
 package model;
 
+import java.text.DecimalFormat;
+
 public class Calculator {
 
     private double wattage;
     private int operatingHours;
     private int operatingDays;
     private double kWhPrice;
-    private double consumption;
-    private double pricePerTime;
 
     public Calculator(double wattage, int operatingHours, int operatingDays, double kWhPrice) {
         this.wattage = wattage;
@@ -48,37 +48,26 @@ public class Calculator {
         this.kWhPrice = kWhPrice;
     }
 
-    public double getConsumption(double wattage, int operatingHours, int operatingDays, int mode) {
-        double consumptionDay = (wattage * operatingHours)/1000;
-        double consumptionWeek = consumptionDay * operatingDays;
-        switch (mode) {
-            case 1:
-                //Verbrauch/Tag
-                return consumptionDay;
-            case 2:
-                //Verbrauch Woche
-                return consumptionWeek;
-            case 3:
-                //Verbrauch/Monat
-                return consumptionDay * 4;
-            case 4:
-                //Verbrauch/Jahr
-                return consumptionDay * 52;
-            default:
-                return 0.0;
-        }
-
+    public double[] getConsumption(double wattage, int operatingHours, int operatingDays) {
+        double[] consumption = new double[4];
+        consumption[0] = (wattage * operatingHours) / 1000;
+        consumption[1] = consumption[0] * operatingDays;
+        consumption[2] = consumption[1] * 4;
+        consumption[3] =  consumption[1] * 52;
+        return consumption;
     }
 
     public void setConsumption(double consumption) {
-        this.consumption = consumption;
     }
 
-    public double getPricePerTime(double consumption, double kWhPrice) {
-        return consumption*kWhPrice;
+    public double[] getPricePerTime(double[] consumption, double kWhPrice) {
+        double[] pricePerTime = new double[4];
+        for (int i = 0; i < 4; i++) {
+            pricePerTime[i] = consumption[i] * kWhPrice;
+        }
+        return pricePerTime;
     }
 
     public void setPricePerTime(double pricePerTime) {
-        this.pricePerTime = pricePerTime;
     }
 }
