@@ -9,8 +9,8 @@ public class MainViewSwing extends JFrame {
             setTitle("Stromkostenberechner");
             setSize(400,600);
             setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            setVisible(true);
             addEingabe();
+            setVisible(true);
         }
 
         private void addEingabe(){
@@ -32,11 +32,12 @@ public class MainViewSwing extends JFrame {
         JLabel betriebsTageWocheLabel = new JLabel("betriebstage/ Woche: ");
 
 
-        JPanel radioButtonPanel = new JPanel();
-            for (int i = 0; i < 7; i++) {
-
-                radioButtonPanel.add(new JRadioButtonMenuItem(i+ "Tag/e"));
-
+        JPanel radioButtonPanel = new JPanel( new GridLayout(7,1) );
+        ButtonGroup bg = new ButtonGroup();
+            for (int i = 1; i <= 7; i++) {
+                JRadioButton rb = new JRadioButton(i+ " Tag/e");
+                bg.add(rb);
+                radioButtonPanel.add(rb);
             }
 
         /*JRadioButtonMenuItem einTagButton = new JRadioButtonMenuItem("1 Tag");
