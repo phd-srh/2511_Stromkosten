@@ -16,37 +16,6 @@ public class Calculator {
         this.kWhPrice = kWhPrice;
     }
 
-    public double getWattage() {
-        return wattage;
-    }
-
-    public void setWattage(double wattage) {
-        this.wattage = wattage;
-    }
-
-    public int getOperatingHours() {
-        return operatingHours;
-    }
-
-    public void setOperatingHours(int operatingHours) {
-        this.operatingHours = operatingHours;
-    }
-
-    public int getOperatingDays() {
-        return operatingDays;
-    }
-
-    public void setOperatingDays(int operatingDays) {
-        this.operatingDays = operatingDays;
-    }
-
-    public double getkWhPrice() {
-        return kWhPrice;
-    }
-
-    public void setkWhPrice(double kWhPrice) {
-        this.kWhPrice = kWhPrice;
-    }
 
     public double[] getConsumption(double wattage, int operatingHours, int operatingDays) {
         double[] consumption = new double[4];
@@ -57,8 +26,6 @@ public class Calculator {
         return consumption;
     }
 
-    public void setConsumption(double consumption) {
-    }
 
     public double[] getPricePerTime(double[] consumption, double kWhPrice) {
         double[] pricePerTime = new double[4];
@@ -68,6 +35,4 @@ public class Calculator {
         return pricePerTime;
     }
 
-    public void setPricePerTime(double pricePerTime) {
-    }
 }
