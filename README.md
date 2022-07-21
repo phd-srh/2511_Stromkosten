@@ -15,4 +15,4 @@ Der Dialog soll zweiteilig sein:
 
 z.B. könnte es so aussehen: https://www.bbx.de/strom/stromkostenrechner/
 
-Branch: Das ist der master!
+Das ist mein Branch
