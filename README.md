@@ -16,3 +16,8 @@ Der Dialog soll zweiteilig sein:
 z.B. könnte es so aussehen: https://www.bbx.de/strom/stromkostenrechner/
 
 Branch: Das ist der master!
+
+## Zusatzaufgabe
+
+Formulieren Sie auf Basis Ihrer Implementierung eine Aufgabenbeschreibung, anhand derer das Programm so exakt wie das Ihre nachgebaut werden kann.
+Verwenden Sie bei Bedarf dafür auch UML-Diagramme.
